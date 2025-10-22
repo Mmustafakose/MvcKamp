@@ -1,0 +1,152 @@
+/* Temel Sıfırlama ve Font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6; /* Açık gri arkaplan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 1. Kapsayıcı ve Form Stili */
+.login-container {
+    width: 100%;
+    max-width: 400px; /* Maksimum genişlik ile ortalanmış yapı */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 2. Başlık ve Logo */
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    /* Yer tutucu stil: Kendi logonuzla değiştirin */
+    background-color: #3498db; 
+    border-radius: 50%;
+}
+
+.login-header h1 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* 3. Form Alanları */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #3498db; /* Odaklandığında ana renk */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Şifre Alanı İkonu */
+.password-input-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.toggle-password:hover {
+    color: #3498db;
+}
+
+/* 4. Ek Seçenekler */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.forgot-password {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* 5. Buton Stili */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db; /* Ana Aksiyon Rengi */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-primary:active {
+    transform: scale(0.99); /* Tıklama hissi */
+}
+
+/* 6. Güvenlik Notu */
+.security-note {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* 7. Mobil Uyumluluk */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+}

@@ -31,5 +31,11 @@ namespace MvcKamp.Controllers
 		{
 			return View();
 		}
+
+		[AllowAnonymous]
+		public ActionResult HomePage()
+		{
+			return View();
+		}
 	}
 }

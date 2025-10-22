@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+@{
+    ViewBag.Title = "Get All Content";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+
+    <h2 class="mb-4 text-primary" style="padding:20px">Tüm İçerikler</h2>
+
+    <!-- Arama Formu -->
+    @using (Html.BeginForm("GetAllContent", "Content", FormMethod.Post, new { @class = "mb-4" }))
+    {
+        <p></p>
+        <div class="input-group">
+            @Html.TextBox("p", null, new { @class = "form-control", placeholder = "Aranacak kelimeyi girin..." })
+            <button class="btn btn-primary" type="submit">Ara</button>
+        </div>
+    }
+
+
+    <!-- İçerik Listesi -->
+    <div class="list-group">
+        <p></p>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <div class="list-group-item list-group-item-action mb-2 shadow-sm rounded">
+                    <p class="mb-0">@item.convertValue</p>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-info">Henüz içerik bulunmamaktadır.</div>
+        }
+    </div>
+</div>
+
+<!-- Stil için opsiyonel küçük CSS -->
+<style>
+    .list-group-item {
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .list-group-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+</style>
